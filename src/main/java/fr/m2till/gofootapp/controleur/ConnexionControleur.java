@@ -6,9 +6,10 @@ import fr.m2till.gofootapp.modele.Utilisateur;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/be/connexion")
 public class ConnexionControleur {
 
-    @PostMapping("/be/connexion")
+    @PostMapping
     @ResponseBody
     public Utilisateur connexion(@RequestBody Connexion connexion) {
         return new Utilisateur(connexion.getEmail(), connexion.getPassword());
