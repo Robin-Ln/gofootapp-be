@@ -1,8 +1,6 @@
 package fr.m2till.gofootapp.modele;
 
-import javax.persistence.*;
-
-public class Utilisateur {
+public class Connexion {
 
     // Attributs
 
@@ -10,19 +8,11 @@ public class Utilisateur {
 
     private String password;
 
-    // Constructeur
-
-    public Utilisateur(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
-
-
     // Methodes
 
     @Override
     public String toString() {
-        return "Utilisateur{" +
+        return "Connexion{" +
                 "email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
