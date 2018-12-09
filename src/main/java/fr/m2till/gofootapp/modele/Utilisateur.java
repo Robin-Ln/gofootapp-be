@@ -13,6 +13,7 @@ public class Utilisateur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Utilisateur")
     private Integer idUtilisateur;
 
     private String nom;
@@ -21,6 +22,8 @@ public class Utilisateur {
 
     private String adresse;
 
+    @ManyToOne
+    @JoinColumn (name="code")
     private TypeProfile typeProfile;
 
     // Constructeur

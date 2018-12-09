@@ -10,10 +10,13 @@ public class Club {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Club")
     private Integer id;
 
     private String nom;
 
+    @ManyToOne
+    @JoinColumn (name="id_Lieu")
     private Lieu lieu;
 
 

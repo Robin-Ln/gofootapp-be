@@ -10,10 +10,15 @@ public class Resultat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Resultat")
     private String id;
 
+    @ManyToOne
+    @JoinColumn (name="id_Score")
     private Score score;
 
+    @ManyToOne
+    @JoinColumn (name="id_Evenement")
     private Evenement evenement;
 
 

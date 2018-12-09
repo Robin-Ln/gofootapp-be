@@ -3,9 +3,7 @@ package fr.m2till.gofootapp.modele.association;
 import fr.m2till.gofootapp.modele.Club;
 import fr.m2till.gofootapp.modele.Utilisateur;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -14,9 +12,16 @@ public class AssociationClubUtilisateur {
     // Attributs
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Association_Club_Utilisateur")
+    private Integer id;
+
+
+    @ManyToOne(fetch=FetchType.LAZY)
     private Club club;
 
-    @Id
+
+    @ManyToOne(fetch=FetchType.LAZY)
     private Utilisateur utilisateur;
 
 

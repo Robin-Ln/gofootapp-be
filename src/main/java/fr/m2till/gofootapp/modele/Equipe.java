@@ -11,12 +11,17 @@ public class Equipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Equipe")
     private Integer id;
 
     private String nom;
 
+    @ManyToOne
+    @JoinColumn (name="code")
     private TypeCategorie categorie;
 
+    @ManyToOne
+    @JoinColumn (name="id_Club")
     private Club club;
 
 

@@ -2,6 +2,7 @@ package fr.m2till.gofootapp.modele.type;
 
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 public class TypeLieu {
     // Attributs
 
+    @Id
     private String code;
 
     private String libelle;

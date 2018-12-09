@@ -1,8 +1,6 @@
 package fr.m2till.gofootapp.modele;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Login")
@@ -17,6 +15,8 @@ public class Login {
 
     private String password;
 
+    @ManyToOne
+    @JoinColumn (name="id_Utilisateur")
     private Utilisateur utilisateur;
 
     // Constructeur

@@ -3,9 +3,7 @@ package fr.m2till.gofootapp.modele.association;
 import fr.m2till.gofootapp.modele.Equipe;
 import fr.m2till.gofootapp.modele.Utilisateur;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -14,9 +12,16 @@ public class AssociationUtilisateurEquipe {
     // Attributs
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Association_Utilisateur_Equipe")
+    private Integer id;
+
+
+    @ManyToOne(fetch=FetchType.LAZY)
     private Utilisateur utilisateur;
 
-    @Id
+
+    @ManyToOne(fetch=FetchType.LAZY)
     private Equipe equipe;
 
 

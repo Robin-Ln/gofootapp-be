@@ -11,19 +11,20 @@ public class Lieu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Lieu")
     private Integer id;
 
     private String adresse;
 
-    private Club club;
 
+    @ManyToOne
+    @JoinColumn (name="code")
     private TypeLieu typeLieu;
 
     // Constructeurs
 
-    public Lieu(String adresse, Club club, TypeLieu typeLieu) {
+    public Lieu(String adresse, TypeLieu typeLieu) {
         this.adresse = adresse;
-        this.club = club;
         this.typeLieu = typeLieu;
     }
 
@@ -50,13 +51,6 @@ public class Lieu {
         this.adresse = adresse;
     }
 
-    public Club getClub() {
-        return club;
-    }
-
-    public void setClub(Club club) {
-        this.club = club;
-    }
 
     public TypeLieu getTypeLieu() {
         return typeLieu;

@@ -12,12 +12,17 @@ public class Evenement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_Evenement")
     private Integer id;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar dateDebut;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar dateFin;
 
+    @ManyToOne
+    @JoinColumn (name="code")
     private TypeEvenement typeEvenement;
 
 
