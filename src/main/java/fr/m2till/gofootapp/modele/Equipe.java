@@ -1,20 +1,28 @@
 package fr.m2till.gofootapp.modele;
 
+import fr.m2till.gofootapp.modele.type.TypeCategorie;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Equipe")
 public class Equipe {
     // Attributs
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String nom;
 
-    private Categorie categorie;
+    private TypeCategorie categorie;
 
     private Club club;
 
 
     // Constructeurs
 
-    public Equipe(String nom, Categorie categorie, Club club) {
+    public Equipe(String nom, TypeCategorie categorie, Club club) {
         this.nom = nom;
         this.categorie = categorie;
         this.club = club;
@@ -43,11 +51,11 @@ public class Equipe {
         this.nom = nom;
     }
 
-    public Categorie getCategorie() {
+    public TypeCategorie getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(Categorie categorie) {
+    public void setCategorie(TypeCategorie categorie) {
         this.categorie = categorie;
     }
 

@@ -1,9 +1,16 @@
 package fr.m2till.gofootapp.modele;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Login")
 public class Login {
 
     // Attributs
 
+    @Id
     private String mail;
 
     private String pseudo;

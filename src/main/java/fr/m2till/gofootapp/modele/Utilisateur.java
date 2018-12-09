@@ -2,10 +2,17 @@ package fr.m2till.gofootapp.modele;
 
 import fr.m2till.gofootapp.modele.type.TypeProfile;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "Utilisateur")
 public class Utilisateur {
 
     // Attributs
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idUtilisateur;
 
     private String nom;

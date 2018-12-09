@@ -93,7 +93,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Categorie`
+-- Table `mydb`.`TypeCategorie`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Categorie` (
   `Type` VARCHAR(250) NOT NULL,

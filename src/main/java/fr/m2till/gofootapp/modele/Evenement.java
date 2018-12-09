@@ -2,11 +2,16 @@ package fr.m2till.gofootapp.modele;
 
 import fr.m2till.gofootapp.modele.type.TypeEvenement;
 
+import javax.persistence.*;
 import java.util.Calendar;
 
+@Entity
+@Table(name = "Evenement")
 public class Evenement {
     // Attributs
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private Calendar dateDebut;

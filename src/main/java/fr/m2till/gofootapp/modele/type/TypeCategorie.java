@@ -1,6 +1,12 @@
-package fr.m2till.gofootapp.modele;
+package fr.m2till.gofootapp.modele.type;
 
-public class Categorie {
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Type_Categorie")
+public class TypeCategorie {
     // Attributs
 
     private String code;
@@ -10,7 +16,7 @@ public class Categorie {
 
     // Constructeurs
 
-    public Categorie(String code, String libelle) {
+    public TypeCategorie(String code, String libelle) {
         this.code = code;
         this.libelle = libelle;
     }

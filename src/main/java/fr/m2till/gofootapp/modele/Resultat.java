@@ -1,7 +1,15 @@
 package fr.m2till.gofootapp.modele;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Resultat")
 public class Resultat {
     // Attributs
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
     private Score score;

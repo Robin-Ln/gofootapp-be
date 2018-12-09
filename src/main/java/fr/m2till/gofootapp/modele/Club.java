@@ -1,8 +1,15 @@
 package fr.m2till.gofootapp.modele;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Club")
 public class Club {
     // Attributs
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String nom;

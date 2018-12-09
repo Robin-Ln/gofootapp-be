@@ -1,5 +1,11 @@
 package fr.m2till.gofootapp.modele.type;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Type_Evenement")
 public class TypeEvenement {
     // Attributs
 

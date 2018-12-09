@@ -3,11 +3,20 @@ package fr.m2till.gofootapp.modele.association;
 import fr.m2till.gofootapp.modele.Equipe;
 import fr.m2till.gofootapp.modele.Evenement;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "Association_Equipe_Evenement")
 public class AssociationEquipeEvenement {
     // Attributs
 
+    @Id
     private Equipe equipe;
 
+    @Id
     private Evenement evenement;
 
 

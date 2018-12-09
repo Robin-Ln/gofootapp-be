@@ -2,9 +2,15 @@ package fr.m2till.gofootapp.modele;
 
 import fr.m2till.gofootapp.modele.type.TypeLieu;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Lieu")
 public class Lieu {
     // Attributs
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String adresse;
