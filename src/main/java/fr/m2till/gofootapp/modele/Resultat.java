@@ -10,22 +10,23 @@ public class Resultat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_Resultat")
+    @Column(name = "id_Resultat")
     private String id;
 
-    @ManyToOne
-    @JoinColumn (name="id_Score")
-    private Score score;
+    private Integer scoreEquipe1;
+
+    private Integer scoreEquipe2;
 
     @ManyToOne
-    @JoinColumn (name="id_Evenement")
+    @JoinColumn(name = "id_Evenement")
     private Evenement evenement;
 
 
     // Constructeurs
 
-    public Resultat(Score score, Evenement evenement) {
-        this.score = score;
+    public Resultat(Integer scoreEquipe1, Integer scoreEquipe2, Evenement evenement) {
+        this.scoreEquipe1 = scoreEquipe1;
+        this.scoreEquipe2 = scoreEquipe2;
         this.evenement = evenement;
     }
 
@@ -35,6 +36,7 @@ public class Resultat {
 
     // Accesseurs
 
+
     public String getId() {
         return id;
     }
@@ -43,12 +45,20 @@ public class Resultat {
         this.id = id;
     }
 
-    public Score getScore() {
-        return score;
+    public Integer getScoreEquipe1() {
+        return scoreEquipe1;
     }
 
-    public void setScore(Score score) {
-        this.score = score;
+    public void setScoreEquipe1(Integer scoreEquipe1) {
+        this.scoreEquipe1 = scoreEquipe1;
+    }
+
+    public Integer getScoreEquipe2() {
+        return scoreEquipe2;
+    }
+
+    public void setScoreEquipe2(Integer scoreEquipe2) {
+        this.scoreEquipe2 = scoreEquipe2;
     }
 
     public Evenement getEvenement() {
