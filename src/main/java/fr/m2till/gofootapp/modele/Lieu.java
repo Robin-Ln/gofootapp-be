@@ -18,7 +18,7 @@ public class Lieu {
 
 
     @ManyToOne
-    @JoinColumn (name="code")
+    @JoinColumn (name="code_Type_Lieu")
     private TypeLieu typeLieu;
 
     // Constructeurs

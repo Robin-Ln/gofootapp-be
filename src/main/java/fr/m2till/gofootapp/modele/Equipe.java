@@ -17,7 +17,7 @@ public class Equipe {
     private String nom;
 
     @ManyToOne
-    @JoinColumn (name="code")
+    @JoinColumn (name="code_Type_Categorie")
     private TypeCategorie categorie;
 
     @ManyToOne

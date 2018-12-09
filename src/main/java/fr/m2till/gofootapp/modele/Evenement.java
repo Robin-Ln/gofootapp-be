@@ -22,7 +22,7 @@ public class Evenement {
     private Calendar dateFin;
 
     @ManyToOne
-    @JoinColumn (name="code")
+    @JoinColumn (name="code_Type_Evenement")
     private TypeEvenement typeEvenement;
 
 

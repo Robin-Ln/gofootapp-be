@@ -23,7 +23,7 @@ public class Utilisateur {
     private String adresse;
 
     @ManyToOne
-    @JoinColumn (name="code")
+    @JoinColumn (name="code_Type_Profile")
     private TypeProfile typeProfile;
 
     // Constructeur

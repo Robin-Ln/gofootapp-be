@@ -1,6 +1,7 @@
 package fr.m2till.gofootapp.modele.type;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,6 +12,7 @@ public class TypeProfile {
     // Attributs
 
     @Id
+    @Column(name="code_Type_Profile")
     private String code;
 
     private String libelle;
