@@ -7,14 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Type_Profile")
+@Table(name = "tb_type_profile")
 public class TypeProfile {
     // Attributs
 
     @Id
-    @Column(name="code_Type_Profile")
+    @Column(name="v_tp_code")
     private String code;
 
+    @Column(name="v_tp_libelle")
     private String libelle;
 
 

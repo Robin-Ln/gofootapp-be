@@ -5,20 +5,21 @@ import fr.m2till.gofootapp.modele.type.TypeLieu;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Lieu")
+@Table(name = "tb_lieu")
 public class Lieu {
     // Attributs
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_Lieu")
+    @Column(name="i_l_id")
     private Integer id;
 
+    @Column(name="i_l_adresse")
     private String adresse;
 
 
     @ManyToOne
-    @JoinColumn (name="code_Type_Lieu")
+    @JoinColumn (name="v_tl_code")
     private TypeLieu typeLieu;
 
     // Constructeurs

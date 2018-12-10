@@ -7,21 +7,23 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Association_Equipe_Evenement")
+@Table(name = "tb_ass_equipe_evenement")
 public class AssociationEquipeEvenement {
     // Attributs
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_Association_Equipe_Evenement")
+    @Column(name="i_aee_id")
     private Integer id;
 
 
     @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn (name="i_eq_id")
     private Equipe equipe;
 
 
     @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn (name="i_ev_id")
     private Evenement evenement;
 
 

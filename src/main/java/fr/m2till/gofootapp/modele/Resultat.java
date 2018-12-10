@@ -4,21 +4,23 @@ package fr.m2till.gofootapp.modele;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Resultat")
+@Table(name = "tb_resultat")
 public class Resultat {
     // Attributs
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_Resultat")
-    private String id;
+    @Column(name = "i_r_id")
+    private Integer id;
 
+    @Column(name = "i_r_score_equipe_1")
     private Integer scoreEquipe1;
 
+    @Column(name = "i_r_score_equipe_2")
     private Integer scoreEquipe2;
 
     @ManyToOne
-    @JoinColumn(name = "id_Evenement")
+    @JoinColumn(name = "i_e_id")
     private Evenement evenement;
 
 
@@ -37,11 +39,11 @@ public class Resultat {
     // Accesseurs
 
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -4,26 +4,37 @@ import fr.m2till.gofootapp.modele.type.TypeEvenement;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.List;
 
 @Entity
-@Table(name = "Evenement")
+@Table(name = "tb_evenement")
 public class Evenement {
     // Attributs
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_Evenement")
+    @Column(name="i_ev_id")
     private Integer id;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="i_ev_date_debut")
     private Calendar dateDebut;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="i_ev_date_fin")
     private Calendar dateFin;
 
     @ManyToOne
-    @JoinColumn (name="code_Type_Evenement")
+    @JoinColumn (name="i_te_code")
     private TypeEvenement typeEvenement;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "tb_ass_equipe_evenement",
+            joinColumns = { @JoinColumn(name = "i_ev_id") },
+            inverseJoinColumns = { @JoinColumn(name = "i_eq_id") }
+    )
+    private List<Equipe> equipes;
 
 
     // Constructeurs
