@@ -25,6 +25,15 @@ public class Login {
 
     // Methodes
 
+    @Override
+    public String toString() {
+        return "Login{" +
+                "mail='" + mail + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+
     // Accesseurs
 
 

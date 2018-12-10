@@ -17,7 +17,7 @@ public class ConnexionControleur {
     @PostMapping
     @ResponseBody
     public Boolean connexion(@RequestBody Login login) {
-        return (connexionDAO.getLogin(login) != null);
+        return connexionDAO.loginExist(login);
     }
 
 }

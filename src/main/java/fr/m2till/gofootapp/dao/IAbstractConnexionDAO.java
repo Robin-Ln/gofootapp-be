@@ -4,6 +4,6 @@ import fr.m2till.gofootapp.modele.Login;
 
 public interface IAbstractConnexionDAO {
 
-    Login getLogin(Login login);
+    Boolean loginExist(Login login);
 
 }

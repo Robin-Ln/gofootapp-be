@@ -13,9 +13,9 @@ public class ConnexionDAO implements IAbstractConnexionDAO {
     // @Autowired
     // private SessionFactory sessionFactory;
 
-    @Override
-    public Login getLogin(Login login) {
-        return null;
-    }
 
+    @Override
+    public Boolean loginExist(Login login) {
+        return true;
+    }
 }
