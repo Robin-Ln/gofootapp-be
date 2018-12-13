@@ -1,6 +1,8 @@
 package fr.m2till.gofootapp.modele;
 
 import javax.persistence.*;
+import java.util.Calendar;
+import java.util.Objects;
 
 @Entity
 @Table(name = "tb_login")
@@ -14,6 +16,10 @@ public class Login {
 
     @Column(name = "i_l_password")
     private String password;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="dt_l_date_expiration")
+    private Calendar dateExpiration;
 
 
     // Constructeur
@@ -33,6 +39,19 @@ public class Login {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Login login = (Login) o;
+        return Objects.equals(getMail(), login.getMail()) &&
+                Objects.equals(getPassword(), login.getPassword());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getMail(), getPassword());
+    }
 
     // Accesseurs
 

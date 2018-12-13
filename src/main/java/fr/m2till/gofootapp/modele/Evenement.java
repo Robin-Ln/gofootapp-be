@@ -17,11 +17,11 @@ public class Evenement {
     private Integer id;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="i_ev_date_debut")
+    @Column(name="dt_ev_date_debut")
     private Calendar dateDebut;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="i_ev_date_fin")
+    @Column(name="dt_ev_date_fin")
     private Calendar dateFin;
 
     @ManyToOne
