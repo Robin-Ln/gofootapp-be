@@ -1,6 +1,6 @@
-package fr.m2till.gofootapp.modele;
+package fr.m2till.gofootapp.entity;
 
-import fr.m2till.gofootapp.modele.type.TypeCategorie;
+import fr.m2till.gofootapp.entity.type.TypeCategorie;
 
 import javax.persistence.*;
 import java.util.List;

@@ -1,6 +1,6 @@
-package fr.m2till.gofootapp.modele;
+package fr.m2till.gofootapp.entity;
 
-import fr.m2till.gofootapp.modele.type.TypeEvenement;
+import fr.m2till.gofootapp.entity.type.TypeEvenement;
 
 import javax.persistence.*;
 import java.util.Calendar;

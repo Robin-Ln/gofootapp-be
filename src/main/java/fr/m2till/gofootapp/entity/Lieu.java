@@ -1,6 +1,6 @@
-package fr.m2till.gofootapp.modele;
+package fr.m2till.gofootapp.entity;
 
-import fr.m2till.gofootapp.modele.type.TypeLieu;
+import fr.m2till.gofootapp.entity.type.TypeLieu;
 
 import javax.persistence.*;
 

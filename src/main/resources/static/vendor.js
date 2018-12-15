@@ -56504,7 +56504,7 @@ var AngularProfiler = /** @class */ (function () {
      * the current state of the UI. It runs a minimum of 5 rounds for a minimum
      * of 500 milliseconds.
      *
-     * Optionally, a user may pass a `config` parameter containing a map of
+     * Optionally, a user may pass a `configuration` parameter containing a map of
      * options. Supported options are:
      *
      * `record` (boolean) - causes the profiler to record a CPU profile while
@@ -57218,7 +57218,7 @@ var ResolveEnd = /** @class */ (function (_super) {
 /**
  * @description
  *
- * Represents an event triggered before lazy loading a route config.
+ * Represents an event triggered before lazy loading a route configuration.
  *
  * @publicApi
  */
@@ -57362,11 +57362,11 @@ var Scroll = /** @class */ (function () {
  */
 /**
  * This component is used internally within the router to be a placeholder when an empty
- * router-outlet is needed. For example, with a config such as:
+ * router-outlet is needed. For example, with a configuration such as:
  *
  * `{path: 'parent', outlet: 'nav', children: [...]}`
  *
- * In order to render, there needs to be a component on this config, which will default
+ * In order to render, there needs to be a component on this configuration, which will default
  * to this `EmptyOutletComponent`.
  */
 var EmptyOutletComponent = /** @class */ (function () {
@@ -57440,16 +57440,16 @@ function isNavigationCancelingError(error) {
 function defaultUrlMatcher(segments, segmentGroup, route) {
     var parts = route.path.split('/');
     if (parts.length > segments.length) {
-        // The actual URL is shorter than the config, no match
+        // The actual URL is shorter than the configuration, no match
         return null;
     }
     if (route.pathMatch === 'full' &&
         (segmentGroup.hasChildren() || parts.length < segments.length)) {
-        // The config is longer than the actual URL but we are looking for a full match, return null
+        // The configuration is longer than the actual URL but we are looking for a full match, return null
         return null;
     }
     var posParams = {};
-    // Check each config part against the actual URL
+    // Check each configuration part against the actual URL
     for (var index = 0; index < parts.length; index++) {
         var part = parts[index];
         var segment = segments[index];
@@ -57458,7 +57458,7 @@ function defaultUrlMatcher(segments, segmentGroup, route) {
             posParams[part.substring(1)] = segment;
         }
         else if (part !== segment.path) {
-            // The actual URL part does not match the config, no match
+            // The actual URL part does not match the configuration, no match
             return null;
         }
     }
@@ -57552,7 +57552,7 @@ function getFullPath(parentPath, currentRoute) {
     }
 }
 /**
- * Makes a copy of the config and adds any default required properties.
+ * Makes a copy of the configuration and adds any default required properties.
  */
 function standardizeConfig(r) {
     var children = r.children && r.children.map(standardizeConfig);
@@ -60360,7 +60360,7 @@ var RouteReuseStrategy = /** @class */ (function () {
     return RouteReuseStrategy;
 }());
 /**
- * Does not detach any subtrees. Reuses routes as long as their route config is the same.
+ * Does not detach any subtrees. Reuses routes as long as their route configuration is the same.
  */
 var DefaultRouteReuseStrategy = /** @class */ (function () {
     function DefaultRouteReuseStrategy() {
@@ -61920,11 +61920,11 @@ var RouterPreloader = /** @class */ (function () {
         try {
             for (var routes_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__values"])(routes), routes_1_1 = routes_1.next(); !routes_1_1.done; routes_1_1 = routes_1.next()) {
                 var route = routes_1_1.value;
-                // we already have the config loaded, just recurse
+                // we already have the configuration loaded, just recurse
                 if (route.loadChildren && !route.canLoad && route._loadedConfig) {
                     var childConfig = route._loadedConfig;
                     res.push(this.processRoutes(childConfig.module, childConfig.routes));
-                    // no config loaded, fetch the config
+                    // no configuration loaded, fetch the configuration
                 }
                 else if (route.loadChildren && !route.canLoad) {
                     res.push(this.preloadConfig(ngModule, route));
@@ -62476,7 +62476,7 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('7.0.4')
 /*!******************************************!*\
   !*** ./node_modules/rxjs/_esm5/index.js ***!
   \******************************************/
-/*! exports provided: Observable, ConnectableObservable, GroupedObservable, observable, Subject, BehaviorSubject, ReplaySubject, AsyncSubject, asapScheduler, asyncScheduler, queueScheduler, animationFrameScheduler, VirtualTimeScheduler, VirtualAction, Scheduler, Subscription, Subscriber, Notification, pipe, noop, identity, isObservable, ArgumentOutOfRangeError, EmptyError, ObjectUnsubscribedError, UnsubscriptionError, TimeoutError, bindCallback, bindNodeCallback, combineLatest, concat, defer, empty, forkJoin, from, fromEvent, fromEventPattern, generate, iif, interval, merge, never, of, onErrorResumeNext, pairs, race, range, throwError, timer, using, zip, EMPTY, NEVER, config */
+/*! exports provided: Observable, ConnectableObservable, GroupedObservable, observable, Subject, BehaviorSubject, ReplaySubject, AsyncSubject, asapScheduler, asyncScheduler, queueScheduler, animationFrameScheduler, VirtualTimeScheduler, VirtualAction, Scheduler, Subscription, Subscriber, Notification, pipe, noop, identity, isObservable, ArgumentOutOfRangeError, EmptyError, ObjectUnsubscribedError, UnsubscriptionError, TimeoutError, bindCallback, bindNodeCallback, combineLatest, concat, defer, empty, forkJoin, from, fromEvent, fromEventPattern, generate, iif, interval, merge, never, of, onErrorResumeNext, pairs, race, range, throwError, timer, using, zip, EMPTY, NEVER, configuration */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62637,7 +62637,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NEVER", function() { return _internal_observable_never__WEBPACK_IMPORTED_MODULE_40__["NEVER"]; });
 
-/* harmony import */ var _internal_config__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./internal/config */ "./node_modules/rxjs/_esm5/internal/config.js");
+/* harmony import */ var _internal_config__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./internal/configuration */ "./node_modules/rxjs/_esm5/internal/configuration.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "config", function() { return _internal_config__WEBPACK_IMPORTED_MODULE_50__["config"]; });
 
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
@@ -62968,7 +62968,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_toSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/toSubscriber */ "./node_modules/rxjs/_esm5/internal/util/toSubscriber.js");
 /* harmony import */ var _internal_symbol_observable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../internal/symbol/observable */ "./node_modules/rxjs/_esm5/internal/symbol/observable.js");
 /* harmony import */ var _util_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/pipe */ "./node_modules/rxjs/_esm5/internal/util/pipe.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./config */ "./node_modules/rxjs/_esm5/internal/config.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./configuration */ "./node_modules/rxjs/_esm5/internal/configuration.js");
 /** PURE_IMPORTS_START _util_canReportError,_util_toSubscriber,_internal_symbol_observable,_util_pipe,_config PURE_IMPORTS_END */
 
 
@@ -63099,7 +63099,7 @@ function getPromiseCtor(promiseCtor) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "empty", function() { return empty; });
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ "./node_modules/rxjs/_esm5/internal/config.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./configuration */ "./node_modules/rxjs/_esm5/internal/configuration.js");
 /* harmony import */ var _util_hostReportError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/hostReportError */ "./node_modules/rxjs/_esm5/internal/util/hostReportError.js");
 /** PURE_IMPORTS_START _config,_util_hostReportError PURE_IMPORTS_END */
 
@@ -63575,7 +63575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Observer */ "./node_modules/rxjs/_esm5/internal/Observer.js");
 /* harmony import */ var _Subscription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Subscription */ "./node_modules/rxjs/_esm5/internal/Subscription.js");
 /* harmony import */ var _internal_symbol_rxSubscriber__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../internal/symbol/rxSubscriber */ "./node_modules/rxjs/_esm5/internal/symbol/rxSubscriber.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./config */ "./node_modules/rxjs/_esm5/internal/config.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./configuration */ "./node_modules/rxjs/_esm5/internal/configuration.js");
 /* harmony import */ var _util_hostReportError__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util/hostReportError */ "./node_modules/rxjs/_esm5/internal/util/hostReportError.js");
 /** PURE_IMPORTS_START tslib,_util_isFunction,_Observer,_Subscription,_internal_symbol_rxSubscriber,_config,_util_hostReportError PURE_IMPORTS_END */
 
@@ -63972,9 +63972,9 @@ function flattenUnsubscriptionErrors(errors) {
 
 /***/ "./node_modules/rxjs/_esm5/internal/config.js":
 /*!****************************************************!*\
-  !*** ./node_modules/rxjs/_esm5/internal/config.js ***!
+  !*** ./node_modules/rxjs/_esm5/internal/configuration.js ***!
   \****************************************************/
-/*! exports provided: config */
+/*! exports provided: configuration */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63998,7 +63998,7 @@ var config = {
         return _enable_super_gross_mode_that_will_cause_bad_things;
     },
 };
-//# sourceMappingURL=config.js.map
+//# sourceMappingURL=configuration.js.map
 
 
 /***/ }),

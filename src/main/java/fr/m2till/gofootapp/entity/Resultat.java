@@ -1,4 +1,4 @@
-package fr.m2till.gofootapp.modele;
+package fr.m2till.gofootapp.entity;
 
 
 import javax.persistence.*;

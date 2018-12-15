@@ -1,4 +1,4 @@
-package fr.m2till.gofootapp.config;
+package fr.m2till.gofootapp.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.web.filter.CorsFilter;
 
 
 @Configuration
-public class RestConfig {
+public class RestConfiguration {
 
     @Bean
     public CorsFilter corsFilter() {

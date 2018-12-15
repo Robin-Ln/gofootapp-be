@@ -1,7 +1,7 @@
-package fr.m2till.gofootapp.modele.association;
+package fr.m2till.gofootapp.entity.association;
 
-import fr.m2till.gofootapp.modele.Equipe;
-import fr.m2till.gofootapp.modele.Evenement;
+import fr.m2till.gofootapp.entity.Equipe;
+import fr.m2till.gofootapp.entity.Evenement;
 
 import javax.persistence.*;
 

@@ -1,6 +1,7 @@
-package fr.m2till.gofootapp.modele;
+package fr.m2till.gofootapp.entity;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 
@@ -24,18 +25,28 @@ public class Login {
 
     // Constructeur
 
-    public Login(String mail, String password, Utilisateur utilisateur) {
+
+    public Login() {
+        super();
+    }
+
+    public Login(String mail, String password, Calendar dateExpiration) {
         this.mail = mail;
         this.password = password;
+        this.dateExpiration = dateExpiration;
     }
+
 
     // Methodes
 
+
     @Override
     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         return "Login{" +
                 "mail='" + mail + '\'' +
                 ", password='" + password + '\'' +
+                ", dateExpiration=" + sdf.format(dateExpiration.getTime()) +
                 '}';
     }
 
@@ -70,5 +81,13 @@ public class Login {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Calendar getDateExpiration() {
+        return dateExpiration;
+    }
+
+    public void setDateExpiration(Calendar dateExpiration) {
+        this.dateExpiration = dateExpiration;
     }
 }

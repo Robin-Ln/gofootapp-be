@@ -1,7 +1,7 @@
-package fr.m2till.gofootapp.modele.association;
+package fr.m2till.gofootapp.entity.association;
 
-import fr.m2till.gofootapp.modele.Club;
-import fr.m2till.gofootapp.modele.Utilisateur;
+import fr.m2till.gofootapp.entity.Club;
+import fr.m2till.gofootapp.entity.Utilisateur;
 
 import javax.persistence.*;
 

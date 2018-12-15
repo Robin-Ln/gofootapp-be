@@ -1,4 +1,4 @@
-package fr.m2till.gofootapp.modele.type;
+package fr.m2till.gofootapp.entity.type;
 
 
 import javax.persistence.Column;
@@ -7,21 +7,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_type_profile")
-public class TypeProfile {
+@Table(name = "tb_type_lieu")
+public class TypeLieu {
     // Attributs
 
     @Id
-    @Column(name="v_tp_code")
+    @Column(name="v_tl_code")
     private String code;
 
-    @Column(name="v_tp_libelle")
+    @Column(name="v_tl_libelle")
     private String libelle;
 
 
     // Constructeurs
 
-    public TypeProfile(String code, String libelle) {
+    public TypeLieu(String code, String libelle) {
         this.code = code;
         this.libelle = libelle;
     }

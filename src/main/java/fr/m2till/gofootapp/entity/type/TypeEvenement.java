@@ -1,4 +1,4 @@
-package fr.m2till.gofootapp.modele.type;
+package fr.m2till.gofootapp.entity.type;
 
 
 import javax.persistence.Column;
