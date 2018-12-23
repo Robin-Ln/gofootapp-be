@@ -34,12 +34,7 @@ public class Equipe {
     )
     private List<Evenement> evenements;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "tb_ass_utilisateur_equipe",
-            joinColumns = { @JoinColumn(name = "i_eq_id") },
-            inverseJoinColumns = { @JoinColumn(name = "i_u_id") }
-    )
+    @ManyToMany(mappedBy = "equipes")
     private List<Utilisateur> utilisateurs;
 
 
