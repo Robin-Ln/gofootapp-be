@@ -1,8 +1,11 @@
 package fr.m2till.gofootapp.entity;
 
-import fr.m2till.gofootapp.entity.type.TypeProfile;
+import fr.m2till.gofootapp.modele.type.TypeProfile;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.NaturalId;
+
 import java.util.List;
 
 
@@ -26,13 +29,13 @@ public class Utilisateur {
     @Column(name="i_u_adresse")
     private String adresse;
 
-    @ManyToOne
-    @JoinColumn (name="v_tp_code")
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="v_tp_code",nullable = false,referencedColumnName="v_tp_code")
     private TypeProfile typeProfile;
-
-    @ManyToOne
-    @JoinColumn (name="i_l_mail")
-    private Login login;
+    
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="i_l_mail",nullable = false,referencedColumnName="i_l_mail")
+	private Login login;
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
@@ -44,7 +47,7 @@ public class Utilisateur {
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-            name = "tb_ass_club_utilisateur",
+            name = "tb_ass_equipe_utilisateur",
             joinColumns = { @JoinColumn(name = "i_eq_id") },
             inverseJoinColumns = { @JoinColumn(name = "i_u_id") }
     )
@@ -57,7 +60,6 @@ public class Utilisateur {
         this.prenom = prenom;
         this.adresse = adresse;
         this.typeProfile = typeProfile;
-        this.login = login;
         this.clubs = clubs;
     }
 
@@ -68,14 +70,6 @@ public class Utilisateur {
 
     // Accesseurs
 
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
 
     public List<Club> getClubs() {
         return clubs;

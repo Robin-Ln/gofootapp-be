@@ -1,6 +1,7 @@
 package fr.m2till.gofootapp.entity;
 
 
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -20,12 +21,7 @@ public class Club {
     @JoinColumn (name="i_l_id")
     private Lieu lieu;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "tb_ass_club_utilisateur",
-            joinColumns = { @JoinColumn(name = "i_c_id") },
-            inverseJoinColumns = { @JoinColumn(name = "i_u_id") }
-    )
+    @ManyToMany(mappedBy = "clubs")
     private List<Utilisateur> utilisateurs;
 
 

@@ -1,9 +1,14 @@
-package fr.m2till.gofootapp.entity.type;
+package fr.m2till.gofootapp.modele.type;
 
+
+import fr.m2till.gofootapp.entity.Utilisateur;
+
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +23,8 @@ public class TypeProfile {
     @Column(name="v_tp_libelle")
     private String libelle;
 
+    @OneToMany(mappedBy = "typeProfile")
+	private Set<Utilisateur> utilisateurs;
 
     // Constructeurs
 
