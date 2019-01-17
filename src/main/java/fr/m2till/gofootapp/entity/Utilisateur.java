@@ -62,6 +62,10 @@ public class Utilisateur {
         this.typeProfile = typeProfile;
         this.clubs = clubs;
     }
+    
+    public Utilisateur() {
+    	
+    }
 
 
     // Methodes
