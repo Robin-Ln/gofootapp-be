@@ -1,7 +1,6 @@
 package fr.m2till.gofootapp.entity;
 
 
-
 import javax.persistence.*;
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package fr.m2till.gofootapp.entity;
 
-import fr.m2till.gofootapp.modele.type.TypeProfile;
+import fr.m2till.gofootapp.entity.type.TypeProfile;
 
 import javax.persistence.*;
 

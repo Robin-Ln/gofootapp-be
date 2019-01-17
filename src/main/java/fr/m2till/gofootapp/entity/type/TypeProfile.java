@@ -1,7 +1,5 @@
-package fr.m2till.gofootapp.modele.type;
+package fr.m2till.gofootapp.entity.type;
 
-
-import fr.m2till.gofootapp.entity.Utilisateur;
 
 import java.util.Set;
 
@@ -10,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import fr.m2till.gofootapp.entity.Utilisateur;
 
 @Entity
 @Table(name = "tb_type_profile")

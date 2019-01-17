@@ -12,10 +12,10 @@ public class TypeEvenement {
     // Attributs
 
     @Id
-    @Column(name="v_te_code")
+    @Column(name="i_te_code")
     private String code;
 
-    @Column(name="v_te_libelle")
+    @Column(name="i_te_libelle")
     private String libelle;
 
 

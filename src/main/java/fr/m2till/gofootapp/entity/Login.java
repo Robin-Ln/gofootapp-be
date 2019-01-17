@@ -22,6 +22,14 @@ public class Login {
 	@Column(name = "dt_l_date_expiration")
 	private Calendar dateExpiration;
 
+	public Calendar getDateExpiration() {
+		return dateExpiration;
+	}
+
+	public void setDateExpiration(Calendar dateExpiration) {
+		this.dateExpiration = dateExpiration;
+	}
+
 	@OneToMany(mappedBy = "typeProfile")
 	private Set<Utilisateur> utilisateurs;
 
@@ -70,21 +78,5 @@ public class Login {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Calendar getDateExpiration() {
-		return dateExpiration;
-	}
-
-	public void setDateExpiration(Calendar dateExpiration) {
-		this.dateExpiration = dateExpiration;
-	}
-
-	public Set<Utilisateur> getUtilisateurs() {
-		return utilisateurs;
-	}
-
-	public void setUtilisateurs(Set<Utilisateur> utilisateurs) {
-		this.utilisateurs = utilisateurs;
 	}
 }
