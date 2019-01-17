@@ -22,17 +22,12 @@ public class Equipe {
     @JoinColumn (name="v_tc_code")
     private TypeCategorie categorie;
 
-    @ManyToOne
-    @JoinColumn (name="i_c_id")
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="i_c_id",nullable = false,referencedColumnName="i_c_id")
     private Club club;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "tb_ass_equipe_evenement",
-            joinColumns = { @JoinColumn(name = "i_eq_id") },
-            inverseJoinColumns = { @JoinColumn(name = "i_ev_id") }
-    )
-    private List<Evenement> evenements;
+    @ManyToMany(mappedBy = "equipes")
+    private List<Match> matchs;
 
     @ManyToMany(mappedBy = "equipes")
     private List<Utilisateur> utilisateurs;
@@ -44,6 +39,10 @@ public class Equipe {
         this.nom = nom;
         this.categorie = categorie;
         this.club = club;
+    }
+    
+    public Equipe() {
+    	
     }
 
 

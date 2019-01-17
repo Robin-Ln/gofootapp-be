@@ -25,6 +25,10 @@ public class TypeLieu {
         this.code = code;
         this.libelle = libelle;
     }
+    
+    public TypeLieu() {
+    	
+    }
 
 
     // Methodes

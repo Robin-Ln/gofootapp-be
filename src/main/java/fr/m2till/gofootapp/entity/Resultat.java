@@ -19,19 +19,22 @@ public class Resultat {
     @Column(name = "i_r_score_equipe_2")
     private Integer scoreEquipe2;
 
-    @ManyToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "i_e_id")
-    private Evenement evenement;
+    private Match match;
 
 
     // Constructeurs
 
-    public Resultat(Integer scoreEquipe1, Integer scoreEquipe2, Evenement evenement) {
+    public Resultat(Integer scoreEquipe1, Integer scoreEquipe2, Match match) {
         this.scoreEquipe1 = scoreEquipe1;
         this.scoreEquipe2 = scoreEquipe2;
-        this.evenement = evenement;
+        this.match = match;
     }
 
+    public Resultat() {
+    	
+    }
 
     // Methodes
 
@@ -63,11 +66,13 @@ public class Resultat {
         this.scoreEquipe2 = scoreEquipe2;
     }
 
-    public Evenement getEvenement() {
-        return evenement;
-    }
 
-    public void setEvenement(Evenement evenement) {
-        this.evenement = evenement;
-    }
+	public Match getMatch() {
+		return match;
+	}
+
+	public void setMatch(Match match) {
+		this.match = match;
+	}
+    
 }

@@ -1,14 +1,12 @@
 package fr.m2till.gofootapp.entity;
 
-import fr.m2till.gofootapp.entity.type.TypeEvenement;
-
 import javax.persistence.*;
 import java.util.Calendar;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_evenement")
-public class Evenement {
+@Table(name = "tb_match")
+public class Match {
     // Attributs
 
     @Id
@@ -25,24 +23,31 @@ public class Evenement {
     private Calendar dateFin;
 
     @ManyToOne
-    @JoinColumn (name="i_te_code")
-    private TypeEvenement typeEvenement;
+    @JoinColumn(name="i_l_id",nullable = false,referencedColumnName="i_l_id")
+    private Lieu lieu;
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-            name = "tb_ass_equipe_evenement",
+            name = "tb_ass_equipe_match",
             joinColumns = { @JoinColumn(name = "i_ev_id") },
             inverseJoinColumns = { @JoinColumn(name = "i_eq_id") }
     )
     private List<Equipe> equipes;
+    
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "i_e_id")
+    private Resultat resultat;
 
 
     // Constructeurs
 
-    public Evenement(Calendar dateDebut, Calendar dateFin, TypeEvenement typeEvenement) {
+    public Match(Calendar dateDebut, Calendar dateFin) {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
-        this.typeEvenement = typeEvenement;
+    }
+    
+    public Match() {
+    	
     }
 
 
@@ -76,11 +81,15 @@ public class Evenement {
         this.dateFin = dateFin;
     }
 
-    public TypeEvenement getTypeEvenement() {
-        return typeEvenement;
-    }
 
-    public void setTypeEvenement(TypeEvenement typeEvenement) {
-        this.typeEvenement = typeEvenement;
-    }
+	public Lieu getLieu() {
+		return lieu;
+	}
+
+
+	public void setLieu(Lieu lieu) {
+		this.lieu = lieu;
+	}
+    
+    
 }

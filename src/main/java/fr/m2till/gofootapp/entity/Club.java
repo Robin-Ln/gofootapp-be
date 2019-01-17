@@ -16,20 +16,25 @@ public class Club {
 
     private String nom;
 
-    @ManyToOne
-    @JoinColumn (name="i_l_id")
-    private Lieu lieu;
-
     @ManyToMany(mappedBy = "clubs")
     private List<Utilisateur> utilisateurs;
-
-
+    
+    @OneToMany(mappedBy = "club")
+    private List<Equipe> equipes;
+    
+    @ManyToMany(mappedBy = "clubs")
+    private List<Lieu> lieux;
+    
     // Constructeurs
 
-    public Club(String nom, Lieu lieu, List<Utilisateur> utilisateurs) {
+    public Club(String nom,  List<Lieu> lieux, List<Utilisateur> utilisateurs) {
         this.nom = nom;
-        this.lieu = lieu;
+        this.lieux = lieux;
         this.utilisateurs = utilisateurs;
+    }
+    
+    public Club() {
+    	
     }
 
 
@@ -63,11 +68,15 @@ public class Club {
         this.nom = nom;
     }
 
-    public Lieu getLieu() {
-        return lieu;
-    }
 
-    public void setLieu(Lieu lieu) {
-        this.lieu = lieu;
-    }
+	public List<Lieu> getLieux() {
+		return lieux;
+	}
+
+
+	public void setLieux(List<Lieu> lieux) {
+		this.lieux = lieux;
+	}
+
+    
 }

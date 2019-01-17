@@ -39,6 +39,10 @@ public class Login {
 		this.mail = mail;
 		this.password = password;
 	}
+	
+	public Login() {
+		
+	}
 
 	// Methodes
 

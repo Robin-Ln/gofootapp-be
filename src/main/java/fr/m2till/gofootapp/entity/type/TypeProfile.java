@@ -32,6 +32,10 @@ public class TypeProfile {
         this.code = code;
         this.libelle = libelle;
     }
+    
+    public TypeProfile() {
+    	
+    }
 
 
     // Methodes

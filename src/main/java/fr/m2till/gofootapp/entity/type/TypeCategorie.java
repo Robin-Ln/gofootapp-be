@@ -25,6 +25,10 @@ public class TypeCategorie {
         this.code = code;
         this.libelle = libelle;
     }
+    
+    public TypeCategorie() {
+    	
+    }
 
 
     // Methodes
