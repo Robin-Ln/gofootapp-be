@@ -28,3 +28,5 @@ ${env.TOMCAT8_BAI_HOME}/
 /cybele-be-model/src/main/java/hibernate.cfg.xml
 ~*
 /.tgitconfig
+src/main/resources/application.properties
+src/main/resources/application.properties

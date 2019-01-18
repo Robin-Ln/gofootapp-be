@@ -12,4 +12,7 @@ public interface ILoginService {
 
     boolean existsByMailAndPassword(Login login);
 
+    boolean existsByMail(String mail);
+
+
 }

@@ -26,4 +26,8 @@ public class LoginService implements ILoginService {
         return loginRepository.existsByMailAndPassword(login.getMail(),login.getPassword());
     }
 
+    @Override
+    public boolean existsByMail(String mail) {
+        return loginRepository.existsByMail(mail);
+    }
 }

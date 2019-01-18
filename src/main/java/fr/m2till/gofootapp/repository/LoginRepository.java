@@ -11,4 +11,6 @@ public interface LoginRepository extends CrudRepository<Login,String> {
 
     boolean existsByMailAndPassword(String mail, String password);
 
+    boolean existsByMail(String mail);
+
 }

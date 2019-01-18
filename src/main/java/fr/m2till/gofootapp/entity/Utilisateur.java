@@ -7,6 +7,7 @@ import javax.persistence.*;
 import org.hibernate.annotations.NaturalId;
 
 import java.util.List;
+import java.util.Objects;
 
 
 @Entity
@@ -70,6 +71,16 @@ public class Utilisateur {
 
     // Methodes
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Utilisateur that = (Utilisateur) o;
+        return Objects.equals(nom, that.nom) &&
+                Objects.equals(prenom, that.prenom) &&
+                Objects.equals(adresse, that.adresse) &&
+                Objects.equals(login, that.login);
+    }
 
 
     // Accesseurs
@@ -121,5 +132,21 @@ public class Utilisateur {
 
     public void setTypeProfile(TypeProfile typeProfile) {
         this.typeProfile = typeProfile;
+    }
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
+    public List<Equipe> getEquipes() {
+        return equipes;
+    }
+
+    public void setEquipes(List<Equipe> equipes) {
+        this.equipes = equipes;
     }
 }
