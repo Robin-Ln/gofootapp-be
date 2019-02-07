@@ -20,6 +20,21 @@ public class InscriptionFormDto {
     }
 
     /*
+     * Méthodes
+     */
+
+    @Override
+    public String toString() {
+        return "InscriptionFormDto{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", telephone=" + telephone +
+                ", password='" + password + '\'' +
+                ", confirmation='" + confirmation + '\'' +
+                '}';
+    }
+    /*
      * Accesseurs
      */
 

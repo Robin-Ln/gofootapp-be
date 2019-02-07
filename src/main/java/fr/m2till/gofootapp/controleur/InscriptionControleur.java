@@ -35,6 +35,7 @@ public class InscriptionControleur {
         System.out.println(inscriptionForm);
 
         Utilisateur utilisateur = InscriptionHelper.InscriptionFormDtoToEntity(inscriptionForm);
+        System.out.println(utilisateur);
         Utilisateur utilisateurSave = this.inscriptionRepository.save(utilisateur);
 
         return utilisateur.equals(utilisateurSave);

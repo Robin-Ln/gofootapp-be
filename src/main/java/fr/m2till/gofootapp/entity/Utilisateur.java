@@ -82,6 +82,19 @@ public class Utilisateur {
                 Objects.equals(login, that.login);
     }
 
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "idUtilisateur=" + idUtilisateur +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", typeProfile=" + typeProfile +
+                ", login=" + login +
+                ", clubs=" + clubs +
+                ", equipes=" + equipes +
+                '}';
+    }
 
     // Accesseurs
 

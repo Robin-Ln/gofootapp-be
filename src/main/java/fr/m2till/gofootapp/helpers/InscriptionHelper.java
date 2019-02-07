@@ -18,6 +18,8 @@ public class InscriptionHelper {
 
         utilisateur.setLogin(login);
 
+        utilisateur.setAdresse("");
+
         return utilisateur;
     }
 }
