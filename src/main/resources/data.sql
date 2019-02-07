@@ -10,7 +10,7 @@ INSERT INTO tb_type_profile VALUES("jou","Joueur");
 -- Création du profil de l'utilisateur ainsi que son login
 
 INSERT INTO tb_login VALUES("robin@louarn.fr","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (1,"Langevin 29200 Brest","Louarn","Robin","Robin@gmail.com","abr");
+INSERT INTO tb_utilisateur VALUES (1,"Langevin 29200 Brest","Louarn","Robin","robin@louarn.fr","abr");
 
 INSERT INTO tb_login VALUES("Sebastien@gmail.com","2020-08-08","azerty");
 INSERT INTO tb_utilisateur VALUES (2,"Kerinou 29200 Brest","Bossert","Sebastien","Sebastien@gmail.com","abr");
