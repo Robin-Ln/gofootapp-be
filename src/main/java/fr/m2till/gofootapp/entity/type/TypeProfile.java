@@ -1,6 +1,5 @@
 package fr.m2till.gofootapp.entity.type;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,46 +8,44 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_type_profile")
 public class TypeProfile {
-    // Attributs
+	// Attributs
 
-    @Id
-    @Column(name="v_tp_code")
-    private String code;
+	@Id
+	@Column(name = "v_tp_code")
+	private String code;
 
-    @Column(name="v_tp_libelle")
-    private String libelle;
+	@Column(name = "v_tp_libelle")
+	private String libelle;
 
-    // Constructeurs
+	// Constructeurs
 
-    public TypeProfile(String code, String libelle) {
-        this.code = code;
-        this.libelle = libelle;
-    }
-    
-    public TypeProfile() {
-    	
-    }
+	public TypeProfile(String code, String libelle) {
+		this.code = code;
+		this.libelle = libelle;
+	}
 
+	public TypeProfile() {
 
-    // Methodes
+	}
 
+	// Methodes
 
-    // Accesseurs
+	// Accesseurs
 
+	public String getCode() {
+		return code;
+	}
 
-    public String getCode() {
-        return code;
-    }
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+	public String getLibelle() {
+		return libelle;
+	}
 
-    public String getLibelle() {
-        return libelle;
-    }
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
 
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
-    }
 }

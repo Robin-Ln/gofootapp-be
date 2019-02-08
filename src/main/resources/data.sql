@@ -85,11 +85,22 @@ INSERT INTO tb_ass_equipe_match VALUES (2,3);
 
 -- Mise en lien de l'equipe avec un utilisateur
 
-INSERT INTO tb_ass_equipe_utilisateur VALUES (1,"abr",1);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (2,"abr",1);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (3,"abr",1);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (4,"jou",2);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (1,"abr",1,NULL);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (2,"abr",1,NULL);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (3,"abr",1,NULL);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (4,"jou",2,NULL);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3,NULL);
+
+-- Création d'une position correspondant au poste du joueur 
+
+INSERT INTO tb_position VALUES(1,"DC");
+
+-- Cette position on l'associe à une equipe et à un utilisateur
+UPDATE tb_ass_equipe_utilisateur
+SET i_p_id=1
+WHERE i_u_id=4
+AND i_eq_id=2;
+
 
 
 

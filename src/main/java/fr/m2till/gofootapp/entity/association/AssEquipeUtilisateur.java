@@ -2,6 +2,7 @@ package fr.m2till.gofootapp.entity.association;
 
 import fr.m2till.gofootapp.entity.Equipe;
 import fr.m2till.gofootapp.entity.Utilisateur;
+import fr.m2till.gofootapp.entity.type.Position;
 import fr.m2till.gofootapp.entity.type.TypeProfile;
 
 import javax.persistence.*;
@@ -11,7 +12,12 @@ import java.io.Serializable;
 @Table(name = "tb_ass_equipe_utilisateur")
 public class AssEquipeUtilisateur implements Serializable {
 
-    /*
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5787750854317890910L;
+
+	/*
      * Attributs
      */
     @Id
@@ -28,6 +34,10 @@ public class AssEquipeUtilisateur implements Serializable {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="v_tp_code",nullable = false,referencedColumnName="v_tp_code")
     private TypeProfile typeProfile;
+    
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="i_p_id",nullable = true,referencedColumnName="i_p_id")
+    private Position position;
 
 
     /*
@@ -63,4 +73,14 @@ public class AssEquipeUtilisateur implements Serializable {
     public void setTypeProfile(TypeProfile typeProfile) {
         this.typeProfile = typeProfile;
     }
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+    
+    
 }
