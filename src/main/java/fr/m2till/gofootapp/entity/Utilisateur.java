@@ -1,5 +1,6 @@
 package fr.m2till.gofootapp.entity;
 
+import fr.m2till.gofootapp.entity.association.AssEquipeUtilisateur;
 import fr.m2till.gofootapp.entity.type.TypeProfile;
 
 import javax.persistence.*;
@@ -46,23 +47,10 @@ public class Utilisateur {
     )
     private List<Club> clubs;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "tb_ass_equipe_utilisateur",
-            joinColumns = { @JoinColumn(name = "i_eq_id") },
-            inverseJoinColumns = { @JoinColumn(name = "i_u_id") }
-    )
-    private List<Equipe> equipes;
+    @OneToMany(mappedBy = "utilisateur")
+    private List<AssEquipeUtilisateur> assEquipeUtilisateurs;
 
     // Constructeur
-
-    public Utilisateur(String nom, String prenom, String adresse, TypeProfile typeProfile, Login login, List<Club> clubs) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.typeProfile = typeProfile;
-        this.clubs = clubs;
-    }
     
     public Utilisateur() {
     	
@@ -92,7 +80,6 @@ public class Utilisateur {
                 ", typeProfile=" + typeProfile +
                 ", login=" + login +
                 ", clubs=" + clubs +
-                ", equipes=" + equipes +
                 '}';
     }
 
@@ -153,13 +140,5 @@ public class Utilisateur {
 
     public void setLogin(Login login) {
         this.login = login;
-    }
-
-    public List<Equipe> getEquipes() {
-        return equipes;
-    }
-
-    public void setEquipes(List<Equipe> equipes) {
-        this.equipes = equipes;
     }
 }

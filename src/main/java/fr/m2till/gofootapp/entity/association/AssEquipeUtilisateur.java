@@ -5,11 +5,11 @@ import fr.m2till.gofootapp.entity.Utilisateur;
 import fr.m2till.gofootapp.entity.type.TypeProfile;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "tb_ass_equipe_utilisateur")
-public class AssEquipeUtilisateur {
+public class AssEquipeUtilisateur implements Serializable {
 
     /*
      * Attributs
@@ -24,6 +24,7 @@ public class AssEquipeUtilisateur {
     @JoinColumn(name="i_eq_id",nullable = false,referencedColumnName="i_eq_id")
     private Equipe equipe;
 
+    @Id
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="v_tp_code",nullable = false,referencedColumnName="v_tp_code")
     private TypeProfile typeProfile;

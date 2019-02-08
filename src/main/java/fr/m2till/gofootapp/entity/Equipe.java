@@ -1,5 +1,6 @@
 package fr.m2till.gofootapp.entity;
 
+import fr.m2till.gofootapp.entity.association.AssEquipeUtilisateur;
 import fr.m2till.gofootapp.entity.type.TypeCategorie;
 
 import javax.persistence.*;
@@ -29,8 +30,8 @@ public class Equipe {
     @ManyToMany(mappedBy = "equipes")
     private List<Match> matchs;
 
-    @ManyToMany(mappedBy = "equipes")
-    private List<Utilisateur> utilisateurs;
+    @OneToMany(mappedBy = "equipe")
+    private List<AssEquipeUtilisateur> assEquipeUtilisateurs;
 
 
     // Constructeurs
