@@ -7,6 +7,7 @@ import fr.m2till.gofootapp.entity.type.TypeProfile;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name = "tb_ass_equipe_utilisateur")
@@ -47,8 +48,31 @@ public class AssEquipeUtilisateur implements Serializable {
     }
 
     /*
+     * Méthodes
+     */
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AssEquipeUtilisateur that = (AssEquipeUtilisateur) o;
+        return Objects.equals(utilisateur, that.utilisateur) &&
+                Objects.equals(equipe, that.equipe) &&
+                Objects.equals(typeProfile, that.typeProfile) &&
+                Objects.equals(position, that.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(utilisateur, equipe, typeProfile, position);
+    }
+    /*
      * Accesseurs
      */
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Utilisateur getUtilisateur() {
         return utilisateur;

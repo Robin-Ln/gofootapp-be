@@ -91,16 +91,22 @@ INSERT INTO tb_ass_equipe_utilisateur VALUES (3,"abr",1,NULL);
 INSERT INTO tb_ass_equipe_utilisateur VALUES (4,"jou",2,NULL);
 INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3,NULL);
 
--- Création d'une position correspondant au poste du joueur 
+-- Création d'une typePosition correspondant au poste du joueur
 
 INSERT INTO tb_position VALUES(1,"DC");
 
--- Cette position on l'associe à une equipe et à un utilisateur
+-- Cette typePosition on l'associe à une equipe et à un utilisateur
 UPDATE tb_ass_equipe_utilisateur
 SET i_p_id=1
 WHERE i_u_id=4
 AND i_eq_id=2;
 
-
-
+-- Mise a jour de la table des sequences
+UPDATE `tb_sequence` SET `next_val` = '4' WHERE (`sequence_name` = 'tb_club');
+UPDATE `tb_sequence` SET `next_val` = '6' WHERE (`sequence_name` = 'tb_utilisateur');
+UPDATE `tb_sequence` SET `next_val` = '2' WHERE (`sequence_name` = 'tb_resultat');
+UPDATE `tb_sequence` SET `next_val` = '3' WHERE (`sequence_name` = 'tb_match');
+UPDATE `tb_sequence` SET `next_val` = '3' WHERE (`sequence_name` = 'tb_lieu');
+UPDATE `tb_sequence` SET `next_val` = '4' WHERE (`sequence_name` = 'tb_equipe');
+UPDATE `tb_sequence` SET `next_val` = '2' WHERE (`sequence_name` = 'tb_position');
 

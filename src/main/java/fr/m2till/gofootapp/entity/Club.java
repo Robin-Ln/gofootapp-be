@@ -10,7 +10,7 @@ public class Club {
     // Attributs
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tb_sequence")
     @Column(name="i_c_id")
     private Integer id;
 
@@ -78,5 +78,11 @@ public class Club {
 		this.lieux = lieux;
 	}
 
-    
+    public List<Equipe> getEquipes() {
+        return equipes;
+    }
+
+    public void setEquipes(List<Equipe> equipes) {
+        this.equipes = equipes;
+    }
 }

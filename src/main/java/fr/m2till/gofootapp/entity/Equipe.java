@@ -12,7 +12,7 @@ public class Equipe {
     // Attributs
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tb_sequence")
     @Column(name="i_eq_id")
     private Integer id;
 
@@ -83,5 +83,21 @@ public class Equipe {
 
     public void setClub(Club club) {
         this.club = club;
+    }
+
+    public List<Match> getMatchs() {
+        return matchs;
+    }
+
+    public void setMatchs(List<Match> matchs) {
+        this.matchs = matchs;
+    }
+
+    public List<AssEquipeUtilisateur> getAssEquipeUtilisateurs() {
+        return assEquipeUtilisateurs;
+    }
+
+    public void setAssEquipeUtilisateurs(List<AssEquipeUtilisateur> assEquipeUtilisateurs) {
+        this.assEquipeUtilisateurs = assEquipeUtilisateurs;
     }
 }

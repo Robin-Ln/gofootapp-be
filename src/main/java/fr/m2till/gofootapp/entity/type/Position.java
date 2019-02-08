@@ -17,11 +17,11 @@ public class Position implements Serializable {
 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "tb_sequence")
 	@Column(name = "i_p_id")
 	private Integer idPosition;
 
-	@Column(name = "i_p_role")
+	@Column(name = "v_p_role")
 	private String role;
 
 	
@@ -57,4 +57,7 @@ public class Position implements Serializable {
 		this.role = role;
 	}
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
 }

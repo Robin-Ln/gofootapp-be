@@ -10,7 +10,7 @@ public class Match {
     // Attributs
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tb_sequence")
     @Column(name="i_ev_id")
     private Integer id;
 
@@ -90,6 +90,20 @@ public class Match {
 	public void setLieu(Lieu lieu) {
 		this.lieu = lieu;
 	}
-    
-    
+
+    public List<Equipe> getEquipes() {
+        return equipes;
+    }
+
+    public void setEquipes(List<Equipe> equipes) {
+        this.equipes = equipes;
+    }
+
+    public Resultat getResultat() {
+        return resultat;
+    }
+
+    public void setResultat(Resultat resultat) {
+        this.resultat = resultat;
+    }
 }

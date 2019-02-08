@@ -9,7 +9,7 @@ public class Resultat {
     // Attributs
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tb_sequence")
     @Column(name = "i_r_id")
     private Integer id;
 
@@ -65,7 +65,6 @@ public class Resultat {
     public void setScoreEquipe2(Integer scoreEquipe2) {
         this.scoreEquipe2 = scoreEquipe2;
     }
-
 
 	public Match getMatch() {
 		return match;

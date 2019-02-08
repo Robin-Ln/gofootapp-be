@@ -21,7 +21,7 @@ public class Utilisateur {
     // Attributs
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_sequence")
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tb_sequence")
     @Column(name="i_u_id")
     private Integer idUtilisateur;
 
@@ -75,8 +75,6 @@ public class Utilisateur {
 
 
     // Accesseurs
-
-
     public Integer getIdUtilisateur() {
         return idUtilisateur;
     }

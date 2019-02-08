@@ -41,9 +41,7 @@ public class GofootappApplicationTests {
 
 		Utilisateur res2 = inscriptionRepository.getByIdUtilisateur(res.getIdUtilisateur());
 
-//		System.out.println(res);
+		System.out.println(res);
 		System.out.println(res2);
-
-		assertTrue(true);
 	}
 }

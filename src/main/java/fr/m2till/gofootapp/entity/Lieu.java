@@ -12,7 +12,7 @@ public class Lieu {
     // Attributs
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tb_sequence")
     @Column(name="i_l_id")
     private Integer id;
 
@@ -65,6 +65,13 @@ public class Lieu {
         this.adresse = adresse;
     }
 
+    public List<Club> getClubs() {
+        return clubs;
+    }
+
+    public void setClubs(List<Club> clubs) {
+        this.clubs = clubs;
+    }
 
     public TypeLieu getTypeLieu() {
         return typeLieu;
