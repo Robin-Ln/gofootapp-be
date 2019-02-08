@@ -2,8 +2,8 @@ package fr.m2till.gofootapp.entity;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "tb_login")
@@ -12,10 +12,10 @@ public class Login {
 	// Attributs
 
 	@Id
-	@Column(name = "i_l_mail")
+	@Column(name = "v_l_mail")
 	private String mail;
 
-	@Column(name = "i_l_password")
+	@Column(name = "v_l_password")
 	private String password;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -30,8 +30,6 @@ public class Login {
 		this.dateExpiration = dateExpiration;
 	}
 
-	@OneToMany(mappedBy = "typeProfile")
-	private Set<Utilisateur> utilisateurs;
 
 	// Constructeur
 

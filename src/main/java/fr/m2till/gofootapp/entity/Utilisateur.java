@@ -31,12 +31,9 @@ public class Utilisateur {
     @Column(name="i_u_adresse")
     private String adresse;
 
+
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="v_tp_code",nullable = false,referencedColumnName="v_tp_code")
-    private TypeProfile typeProfile;
-    
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="i_l_mail",nullable = false,referencedColumnName="i_l_mail")
+    @JoinColumn(name="v_l_mail",nullable = false,referencedColumnName="v_l_mail")
 	private Login login;
 
     @ManyToMany(cascade = { CascadeType.ALL })
@@ -60,39 +57,21 @@ public class Utilisateur {
     // Methodes
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Utilisateur that = (Utilisateur) o;
-        return Objects.equals(nom, that.nom) &&
-                Objects.equals(prenom, that.prenom) &&
-                Objects.equals(adresse, that.adresse) &&
-                Objects.equals(login, that.login);
-    }
-
-    @Override
     public String toString() {
         return "Utilisateur{" +
                 "idUtilisateur=" + idUtilisateur +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", adresse='" + adresse + '\'' +
-                ", typeProfile=" + typeProfile +
                 ", login=" + login +
                 ", clubs=" + clubs +
+                ", assEquipeUtilisateurs=" + assEquipeUtilisateurs +
                 '}';
     }
 
+
     // Accesseurs
 
-
-    public List<Club> getClubs() {
-        return clubs;
-    }
-
-    public void setClubs(List<Club> clubs) {
-        this.clubs = clubs;
-    }
 
     public Integer getIdUtilisateur() {
         return idUtilisateur;
@@ -126,19 +105,27 @@ public class Utilisateur {
         this.adresse = adresse;
     }
 
-    public TypeProfile getTypeProfile() {
-        return typeProfile;
-    }
-
-    public void setTypeProfile(TypeProfile typeProfile) {
-        this.typeProfile = typeProfile;
-    }
-
     public Login getLogin() {
         return login;
     }
 
     public void setLogin(Login login) {
         this.login = login;
+    }
+
+    public List<Club> getClubs() {
+        return clubs;
+    }
+
+    public void setClubs(List<Club> clubs) {
+        this.clubs = clubs;
+    }
+
+    public List<AssEquipeUtilisateur> getAssEquipeUtilisateurs() {
+        return assEquipeUtilisateurs;
+    }
+
+    public void setAssEquipeUtilisateurs(List<AssEquipeUtilisateur> assEquipeUtilisateurs) {
+        this.assEquipeUtilisateurs = assEquipeUtilisateurs;
     }
 }

@@ -10,19 +10,19 @@ INSERT INTO tb_type_profile VALUES("jou","Joueur");
 -- Création du profil de l'utilisateur ainsi que son login
 
 INSERT INTO tb_login VALUES("robin@louarn.fr","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (1,"Langevin 29200 Brest","Louarn","Robin","robin@louarn.fr","abr");
+INSERT INTO tb_utilisateur VALUES (1,"Langevin 29200 Brest","Louarn","Robin","robin@louarn.fr");
 
 INSERT INTO tb_login VALUES("Sebastien@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (2,"Kerinou 29200 Brest","Bossert","Sebastien","Sebastien@gmail.com","abr");
+INSERT INTO tb_utilisateur VALUES (2,"Kerinou 29200 Brest","Bossert","Sebastien","Sebastien@gmail.com");
 
 INSERT INTO tb_login VALUES("Nicolas@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (3,"Jaures 29200 Brest","LeGuyader","Nicolas","Nicolas@gmail.com","abr");
+INSERT INTO tb_utilisateur VALUES (3,"Jaures 29200 Brest","LeGuyader","Nicolas","Nicolas@gmail.com");
 
 INSERT INTO tb_login VALUES("Yohann@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (4,"Victor 29200 Brest","Quillivéré","Yohann","Yohann@gmail.com","jou");
+INSERT INTO tb_utilisateur VALUES (4,"Victor 29200 Brest","Quillivéré","Yohann","Yohann@gmail.com");
 
 INSERT INTO tb_login VALUES("Benoit@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (5,"Jaures 29200 Brest","Autretjunior","Benoit","Benoit@gmail.com","jou");
+INSERT INTO tb_utilisateur VALUES (5,"Jaures 29200 Brest","Autretjunior","Benoit","Benoit@gmail.com");
 
 -- Création des clubs
 
@@ -85,11 +85,11 @@ INSERT INTO tb_ass_equipe_match VALUES (2,3);
 
 -- Mise en lien de l'equipe avec un utilisateur
 
-INSERT INTO tb_ass_equipe_utilisateur VALUES (1,1);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (2,1);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (3,1);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (4,2);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (5,3);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (1,"abr",1);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (2,"abr",1);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (3,"abr",1);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (4,"jou",2);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3);
 
 
 

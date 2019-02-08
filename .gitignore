@@ -29,4 +29,3 @@ ${env.TOMCAT8_BAI_HOME}/
 ~*
 /.tgitconfig
 src/main/resources/application.properties
-src/main/resources/application.properties
