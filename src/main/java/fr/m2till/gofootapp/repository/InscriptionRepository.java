@@ -7,4 +7,8 @@ public interface InscriptionRepository extends CrudRepository<Utilisateur,Intege
 
     Utilisateur save(Utilisateur utilisateur);
 
+    Utilisateur getByIdUtilisateur(Integer idUtilisateur);
+
+    Boolean existsByIdUtilisateur(Integer idUtilisateur);
+
 }

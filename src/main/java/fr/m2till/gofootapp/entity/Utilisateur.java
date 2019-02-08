@@ -5,6 +5,9 @@ import fr.m2till.gofootapp.entity.type.TypeProfile;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.NaturalId;
 
 import java.util.List;
@@ -18,7 +21,7 @@ public class Utilisateur {
     // Attributs
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_sequence")
     @Column(name="i_u_id")
     private Integer idUtilisateur;
 
@@ -32,11 +35,11 @@ public class Utilisateur {
     private String adresse;
 
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="v_l_mail",nullable = false,referencedColumnName="v_l_mail")
 	private Login login;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(fetch=FetchType.EAGER, cascade = { CascadeType.ALL })
     @JoinTable(
             name = "tb_ass_club_utilisateur",
             joinColumns = { @JoinColumn(name = "i_u_id") },
@@ -45,6 +48,7 @@ public class Utilisateur {
     private List<Club> clubs;
 
     @OneToMany(mappedBy = "utilisateur")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<AssEquipeUtilisateur> assEquipeUtilisateurs;
 
     // Constructeur
