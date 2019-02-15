@@ -35,7 +35,7 @@ public class Utilisateur {
     private String adresse;
 
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="v_l_mail",nullable = false,referencedColumnName="v_l_mail")
 	private Login login;
 

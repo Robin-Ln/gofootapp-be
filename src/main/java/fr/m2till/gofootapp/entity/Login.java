@@ -32,11 +32,6 @@ public class Login {
 
 
 	// Constructeur
-
-	public Login(String mail, String password, Utilisateur utilisateur) {
-		this.mail = mail;
-		this.password = password;
-	}
 	
 	public Login() {
 		
