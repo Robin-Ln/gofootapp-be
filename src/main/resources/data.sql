@@ -40,7 +40,7 @@ INSERT INTO tb_ass_club_utilisateur VALUES (5,2);
 
 -- Catégorie de l'équipe ... Par défaut si il s'agit pas d'une equipe de foot on mettra adulte
 
-INSERT INTO tb_type_categorie VALUES (1,"Adulte");
+INSERT INTO tb_type_categorie VALUES ("SE","Ségnor");
 
 -- Création d'une equipe dans la bdd
 
@@ -101,7 +101,22 @@ SET i_p_id=1
 WHERE i_u_id=4
 AND i_eq_id=2;
 
+-- tb_regroupement_evenement
+INSERT `tb_regroupement_evenement` (`i_re_id`) VALUES ('1');
+
+-- tb_evenement
+INSERT INTO `tb_evenement` (`i_ev_id`, `dt_ev_date_debut`, `dt_ev_date_fin`, `i_re_id`) VALUES ('1', '2019-02-23 15:31:22', '2019-02-23 17:31:22', '1');
+INSERT INTO `tb_evenement` (`i_ev_id`, `dt_ev_date_debut`, `dt_ev_date_fin`, `i_re_id`) VALUES ('2', '2019-02-23 15:31:22', '2019-02-23 17:31:22', '1');
+
+
+-- tb_entrainement
+INSERT INTO `tb_entrainement` (`i_en_id`, `i_en_regroupement_evenement`, `i_en_type_categorie`) VALUES ('1', '1', 'SE');
+
+
 -- Mise a jour de la table des sequences
+UPDATE `tb_sequence` SET `next_val` = '2' WHERE (`sequence_name` = 'tb_entrainement');
+UPDATE `tb_sequence` SET `next_val` = '3' WHERE (`sequence_name` = 'tb_evenement');
+UPDATE `tb_sequence` SET `next_val` = '2' WHERE (`sequence_name` = 'tb_regroupement_evenement');
 UPDATE `tb_sequence` SET `next_val` = '4' WHERE (`sequence_name` = 'tb_club');
 UPDATE `tb_sequence` SET `next_val` = '6' WHERE (`sequence_name` = 'tb_utilisateur');
 UPDATE `tb_sequence` SET `next_val` = '2' WHERE (`sequence_name` = 'tb_resultat');
