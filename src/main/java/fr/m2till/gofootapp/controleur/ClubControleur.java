@@ -1,27 +1,18 @@
 package fr.m2till.gofootapp.controleur;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import org.assertj.core.util.Lists;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import fr.m2till.gofootapp.dto.ClubDto;
 import fr.m2till.gofootapp.dto.InscriptionClubDto;
 import fr.m2till.gofootapp.dto.NouveauClubDto;
 import fr.m2till.gofootapp.entity.Club;
-import fr.m2till.gofootapp.entity.Lieu;
 import fr.m2till.gofootapp.entity.Utilisateur;
 import fr.m2till.gofootapp.repository.ClubRepository;
 import fr.m2till.gofootapp.repository.InscriptionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 @RestController
 public class ClubControleur {
