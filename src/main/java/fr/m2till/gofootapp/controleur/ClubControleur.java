@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.m2till.gofootapp.dto.ClubDto;
 import fr.m2till.gofootapp.dto.InscriptionClubDto;
+import fr.m2till.gofootapp.dto.NouveauClubDto;
 import fr.m2till.gofootapp.entity.Club;
 import fr.m2till.gofootapp.entity.Lieu;
 import fr.m2till.gofootapp.entity.Utilisateur;
@@ -94,6 +95,32 @@ public class ClubControleur {
 		}
 		
 		utilisateur.getClubs().add(club);
+		inscriptionRepository.save(utilisateur);
+		
+		return true;
+		
+	}
+	
+	@RequestMapping(value = "/be/nouveauClub" , method= RequestMethod.POST)
+	@ResponseBody
+	public boolean nouveauClub(@RequestBody NouveauClubDto nouveauClub) {
+		Utilisateur  utilisateur =inscriptionRepository.getByIdUtilisateur(nouveauClub.getIdUtilisateur());
+		if(utilisateur==null) {
+			System.err.println("utilisateur non trouver");
+			return false;
+		}
+		
+		Club club= new Club();
+		club.setNom(nouveauClub.getNom());
+		Club clubCreer =clubRepository.save(club);		
+		
+		if(clubCreer==null) {
+			System.err.println("club non trouver");
+			return false;
+		}
+		
+		
+		utilisateur.getClubs().add(clubCreer);
 		inscriptionRepository.save(utilisateur);
 		
 		return true;
