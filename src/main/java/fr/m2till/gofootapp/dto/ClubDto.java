@@ -5,19 +5,20 @@ public class ClubDto {
 	private int id;
 	private String nom;
 	private int nombreAdherent;
-	private String[] equipe;
+	private EquipeDto[] equipes;
 	
 	public ClubDto() {
 		
 	}
 	
 	
-	public ClubDto(int id ,String nom, int nombreAdherent, String[] equipe) {
+	public ClubDto(int id ,String nom, int nombreAdherent, EquipeDto[] equipe) {
 		super();
 		this.id=id;
 		this.nom = nom;
 		this.nombreAdherent = nombreAdherent;
-		this.equipe = equipe;
+		this.equipes = equipe;
+		
 	}
 	
 	
@@ -43,11 +44,11 @@ public class ClubDto {
 	public void setNombreAdherent(int nombreAdherent) {
 		this.nombreAdherent = nombreAdherent;
 	}
-	public String[] getEquipe() {
-		return equipe;
+	public EquipeDto[] getEquipe() {
+		return equipes;
 	}
-	public void setEquipe(String[] equipe) {
-		this.equipe = equipe;
+	public void setEquipe(EquipeDto[] equipe) {
+		this.equipes = equipe;
 	}
 	
 	

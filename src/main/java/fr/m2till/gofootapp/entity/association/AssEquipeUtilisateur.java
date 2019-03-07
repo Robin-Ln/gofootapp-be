@@ -35,10 +35,6 @@ public class AssEquipeUtilisateur implements Serializable {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="v_tp_code",nullable = false,referencedColumnName="v_tp_code")
     private TypeProfile typeProfile;
-    
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="i_p_id",nullable = true,referencedColumnName="i_p_id")
-    private Position position;
 
 
     /*
@@ -58,13 +54,12 @@ public class AssEquipeUtilisateur implements Serializable {
         AssEquipeUtilisateur that = (AssEquipeUtilisateur) o;
         return Objects.equals(utilisateur, that.utilisateur) &&
                 Objects.equals(equipe, that.equipe) &&
-                Objects.equals(typeProfile, that.typeProfile) &&
-                Objects.equals(position, that.position);
+                Objects.equals(typeProfile, that.typeProfile);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(utilisateur, equipe, typeProfile, position);
+        return Objects.hash(utilisateur, equipe, typeProfile);
     }
     /*
      * Accesseurs
@@ -97,14 +92,5 @@ public class AssEquipeUtilisateur implements Serializable {
     public void setTypeProfile(TypeProfile typeProfile) {
         this.typeProfile = typeProfile;
     }
-
-	public Position getPosition() {
-		return position;
-	}
-
-	public void setPosition(Position position) {
-		this.position = position;
-	}
-    
     
 }

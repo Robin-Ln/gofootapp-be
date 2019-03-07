@@ -19,7 +19,7 @@ public class Equipe {
     @Column(name="i_eq_nom")
     private String nom;
 
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn (name="v_tc_code")
     private TypeCategorie categorie;
 
