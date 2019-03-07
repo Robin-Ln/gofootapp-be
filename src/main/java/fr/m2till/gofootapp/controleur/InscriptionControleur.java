@@ -32,12 +32,9 @@ public class InscriptionControleur {
     @PostMapping
     @ResponseBody
     public Boolean connexion(@RequestBody InscriptionFormDto inscriptionForm) {
-        System.out.println(inscriptionForm);
-
         Utilisateur utilisateur = InscriptionHelper.InscriptionFormDtoToEntity(inscriptionForm);
-        System.out.println(utilisateur);
+        this.loginService.save(utilisateur.getLogin());
         Utilisateur utilisateurSave = this.inscriptionRepository.save(utilisateur);
-
         return utilisateur.equals(utilisateurSave);
     }
 
