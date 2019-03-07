@@ -10,19 +10,19 @@ INSERT INTO tb_type_profile VALUES("jou","Joueur");
 -- Création du profil de l'utilisateur ainsi que son login
 
 INSERT INTO tb_login VALUES("robin@louarn.fr","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (1,"Langevin 29200 Brest","Louarn","Robin","robin@louarn.fr");
+INSERT INTO tb_utilisateur VALUES (1,"Langevin 29200 Brest","Louarn","Robin","robin@louarn.fr",NULL);
 
 INSERT INTO tb_login VALUES("Sebastien@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (2,"Kerinou 29200 Brest","Bossert","Sebastien","Sebastien@gmail.com");
+INSERT INTO tb_utilisateur VALUES (2,"Kerinou 29200 Brest","Bossert","Sebastien","Sebastien@gmail.com",NULL);
 
 INSERT INTO tb_login VALUES("Nicolas@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (3,"Jaures 29200 Brest","LeGuyader","Nicolas","Nicolas@gmail.com");
+INSERT INTO tb_utilisateur VALUES (3,"Jaures 29200 Brest","LeGuyader","Nicolas","Nicolas@gmail.com",NULL);
 
 INSERT INTO tb_login VALUES("Yohann@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (4,"Victor 29200 Brest","Quillivéré","Yohann","Yohann@gmail.com");
+INSERT INTO tb_utilisateur VALUES (4,"Victor 29200 Brest","Quillivéré","Yohann","Yohann@gmail.com",NULL);
 
 INSERT INTO tb_login VALUES("Benoit@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (5,"Jaures 29200 Brest","Autretjunior","Benoit","Benoit@gmail.com");
+INSERT INTO tb_utilisateur VALUES (5,"Jaures 29200 Brest","Autretjunior","Benoit","Benoit@gmail.com",NULL);
 
 -- Création des clubs
 
@@ -85,21 +85,20 @@ INSERT INTO tb_ass_equipe_match VALUES (2,3);
 
 -- Mise en lien de l'equipe avec un utilisateur
 
-INSERT INTO tb_ass_equipe_utilisateur VALUES (1,"abr",1,NULL);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (2,"abr",1,NULL);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (3,"abr",1,NULL);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (4,"jou",2,NULL);
-INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3,NULL);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (1,"abr",1);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (2,"abr",1);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (3,"abr",1);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (4,"jou",2);
+INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3);
 
 -- Création d'une typePosition correspondant au poste du joueur
 
 INSERT INTO tb_position VALUES(1,"DC");
 
--- Cette typePosition on l'associe à une equipe et à un utilisateur
-UPDATE tb_ass_equipe_utilisateur
+-- Cette typePosition on l'associe à un utilisateur
+UPDATE tb_utilisateur
 SET i_p_id=1
-WHERE i_u_id=4
-AND i_eq_id=2;
+WHERE i_u_id=4;
 
 -- tb_regroupement_evenement
 INSERT `tb_regroupement_evenement` (`i_re_id`) VALUES ('1');

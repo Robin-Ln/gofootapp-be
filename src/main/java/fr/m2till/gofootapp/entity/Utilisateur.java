@@ -1,6 +1,7 @@
 package fr.m2till.gofootapp.entity;
 
 import fr.m2till.gofootapp.entity.association.AssEquipeUtilisateur;
+import fr.m2till.gofootapp.entity.type.Position;
 import fr.m2till.gofootapp.entity.type.TypeProfile;
 
 import javax.persistence.*;
@@ -33,7 +34,10 @@ public class Utilisateur {
 
     @Column(name="i_u_adresse")
     private String adresse;
-
+    
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="i_p_id",nullable = true,referencedColumnName="i_p_id")
+    private Position position;
 
     @OneToOne
     @JoinColumn(name="v_l_mail",nullable = false,referencedColumnName="v_l_mail")
@@ -130,4 +134,16 @@ public class Utilisateur {
     public void setAssEquipeUtilisateurs(List<AssEquipeUtilisateur> assEquipeUtilisateurs) {
         this.assEquipeUtilisateurs = assEquipeUtilisateurs;
     }
+
+
+	public Position getPosition() {
+		return position;
+	}
+
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+    
+    
 }
