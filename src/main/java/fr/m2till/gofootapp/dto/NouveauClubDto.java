@@ -1,8 +1,9 @@
 package fr.m2till.gofootapp.dto;
 
 public class NouveauClubDto {
-	private Integer idUtilisateur;
 	private String nom;
+	private Integer idUtilisateur;
+	
 	
 	public NouveauClubDto() {
 		super();

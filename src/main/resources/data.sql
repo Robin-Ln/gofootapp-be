@@ -1,4 +1,4 @@
--- Pour que le sql soit importé ajouté la ligne suivante dans le fichier application.
+ -- Pour que le sql soit importé ajouté la ligne suivante dans le fichier application.
 -- properties : spring.datasource.initialization-mode=always
 
 
@@ -44,11 +44,11 @@ INSERT INTO tb_type_categorie VALUES ("SE","Ségnor");
 
 -- Création d'une equipe dans la bdd
 
-INSERT INTO tb_equipe VALUES (1,"Arbitrage",1,1);
+INSERT INTO tb_equipe VALUES (1,"Arbitrage","SE",1);
 
-INSERT INTO tb_equipe VALUES (2,"Guingamp",1,3);
+INSERT INTO tb_equipe VALUES (2,"Guingamp","SE",3);
 
-INSERT INTO tb_equipe VALUES (3,"Rennes",1,2);
+INSERT INTO tb_equipe VALUES (3,"Rennes","SE",2);
 
 -- Création d'un type de lieu -> pour les matchs il y aura le stade
 
