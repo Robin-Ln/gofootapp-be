@@ -1,5 +1,6 @@
 package fr.m2till.gofootapp.controleur;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.query.Query;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.m2till.gofootapp.dto.ClubDto;
 import fr.m2till.gofootapp.dto.UserPostDto;
 import fr.m2till.gofootapp.entity.Club;
+import fr.m2till.gofootapp.entity.ClubIDEntraineur;
 import fr.m2till.gofootapp.entity.UserPost;
 import fr.m2till.gofootapp.repository.ClubRepository;
 import fr.m2till.gofootapp.repository.UserPostRepository;
@@ -28,12 +30,12 @@ public class GestionEquipeControleur {
 	
 	@RequestMapping(value = "/be/clubidentraineur", method = RequestMethod.POST)
 	@ResponseBody
-	public ClubDto getClubEntraineur(@RequestBody Integer idUtilisateur) {
+	public ClubDto getClubEntraineur(@RequestBody String mail) {
 		
-		Club club = clubrepo.getClubEntraineur(idUtilisateur);
+		ClubIDEntraineur club = clubrepo.getClubEntraineur(mail);
 		
 		ClubDto clubdto = new ClubDto();
-		clubdto.setId(club.getId());
+		clubdto.setId(club.getIdClubUtilisateur());
 		
 		return clubdto;
 	}
@@ -41,17 +43,46 @@ public class GestionEquipeControleur {
 
 	@RequestMapping(value = "/be/getListeJoueurClub", method = RequestMethod.POST)
 	@ResponseBody
-	public UserPostDto getListeJoueurClub(@RequestBody Integer idClub) {
+	public List<UserPostDto> getListeJoueurClub(@RequestBody Integer idClub) {
 		
-		UserPost user = userpost.getLstJoueurClub(idClub);
+		ArrayList<UserPost> users = new ArrayList<UserPost>(userpost.getLstJoueurClub(idClub));
+		List<UserPostDto> userspostdto = new ArrayList<>();
 		
-		UserPostDto userposdto = new UserPostDto();
-		userposdto.setIdUtilisateur(user.getIdUtilisateur());
-		userposdto.setNom(user.getNom());
-		userposdto.setPrenom(user.getPrenom());
-		userposdto.setRole(user.getRole());
+		for(UserPost user : users) {
 		
-		return userposdto;
+			UserPostDto userposdto = new UserPostDto();
+			userposdto.setIdUtilisateur(user.getIdUtilisateur());
+			userposdto.setNom(user.getNom());
+			userposdto.setPrenom(user.getPrenom());
+			userposdto.setRole(user.getRole());
+			
+			userspostdto.add(userposdto);
+		
+		}
+		
+		return userspostdto;
+	}
+	
+	@RequestMapping(value = "/be/getListeJoueurTerrain", method = RequestMethod.POST)
+	@ResponseBody
+	public List<UserPostDto> getListeJoueurTerrain(@RequestBody Integer idClub) {
+		
+		ArrayList<UserPost> users = new ArrayList<UserPost>(userpost.getJoueurTerrain(idClub));
+		List<UserPostDto> userspostdto = new ArrayList<>();
+		
+		for(UserPost user : users) {
+		
+			UserPostDto userposdto = new UserPostDto();
+			userposdto.setIdUtilisateur(user.getIdUtilisateur());
+			userposdto.setNom(user.getNom());
+			userposdto.setPrenom(user.getPrenom());
+			userposdto.setRole(user.getRole());
+			
+			userspostdto.add(userposdto);
+		
+		}
+		
+		return userspostdto;
 	}
 	
 }

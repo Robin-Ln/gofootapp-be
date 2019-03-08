@@ -93,7 +93,17 @@ INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3);
 
 -- Création d'une typePosition correspondant au poste du joueur
 
-INSERT INTO tb_position VALUES(1,"DC");
+INSERT INTO tb_position VALUES(1,"DCG");
+INSERT INTO tb_position VALUES(2,"DCD");
+INSERT INTO tb_position VALUES(3,"DD");
+INSERT INTO tb_position VALUES(4,"DG");
+INSERT INTO tb_position VALUES(5,"GD");
+INSERT INTO tb_position VALUES(6,"MDCG");
+INSERT INTO tb_position VALUES(7,"MDCD");
+INSERT INTO tb_position VALUES(8,"MOC");
+INSERT INTO tb_position VALUES(9,"ATD");
+INSERT INTO tb_position VALUES(10,"ATG");
+INSERT INTO tb_position VALUES(11,"AT");
 
 -- Cette typePosition on l'associe à un utilisateur
 UPDATE tb_utilisateur

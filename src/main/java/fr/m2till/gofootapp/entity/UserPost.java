@@ -2,10 +2,12 @@ package fr.m2till.gofootapp.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class UserPost {
 	
+	 @Id
 	 @Column(name="i_u_id")
 	 private Integer idUtilisateur;
 	 
