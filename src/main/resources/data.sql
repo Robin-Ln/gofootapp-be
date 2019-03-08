@@ -1,6 +1,12 @@
  -- Pour que le sql soit importé ajouté la ligne suivante dans le fichier application.
 -- properties : spring.datasource.initialization-mode=always
 
+ 
+ -- Création des clubs
+
+INSERT INTO tb_club VALUES (1,"Marseille");
+INSERT INTO tb_club VALUES (2,"Rennes");
+INSERT INTO tb_club VALUES (3,"Guingamp");
 
 -- Définition des types de profil 
 
@@ -22,13 +28,66 @@ INSERT INTO tb_login VALUES("Yohann@gmail.com","2020-08-08","azerty");
 INSERT INTO tb_utilisateur VALUES (4,"Victor 29200 Brest","Quillivéré","Yohann","Yohann@gmail.com",NULL);
 
 INSERT INTO tb_login VALUES("Benoit@gmail.com","2020-08-08","azerty");
-INSERT INTO tb_utilisateur VALUES (5,"Jaures 29200 Brest","Autretjunior","Benoit","Benoit@gmail.com",NULL);
+INSERT INTO tb_utilisateur VALUES (5,"Jaures 29200 Brest","Autret","Benoit","Benoit@gmail.com",NULL);
 
--- Création des clubs
+-- Création d'une typePosition correspondant au poste du joueur
 
-INSERT INTO tb_club VALUES (1,"Marseille");
-INSERT INTO tb_club VALUES (2,"Rennes");
-INSERT INTO tb_club VALUES (3,"Guingamp");
+INSERT INTO tb_position VALUES(1,"DCG");
+INSERT INTO tb_position VALUES(2,"DCD");
+INSERT INTO tb_position VALUES(3,"DD");
+INSERT INTO tb_position VALUES(4,"DG");
+INSERT INTO tb_position VALUES(5,"GD");
+INSERT INTO tb_position VALUES(6,"MDCG");
+INSERT INTO tb_position VALUES(7,"MDCD");
+INSERT INTO tb_position VALUES(8,"MOC");
+INSERT INTO tb_position VALUES(9,"ATD");
+INSERT INTO tb_position VALUES(10,"ATG");
+INSERT INTO tb_position VALUES(11,"AT");
+
+-- Ajout des données pour l'écran gestion d'equipe
+
+INSERT INTO tb_login VALUES("Rodolph@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_utilisateur VALUES (6,"Jaures 29200 Brest","Rodoplh","Goudin","Rodolph@gmail.com",2);
+INSERT INTO tb_ass_club_utilisateur VALUES (6,3);
+INSERT INTO tb_login VALUES("Denis@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_utilisateur VALUES (7,"Jaures 29200 Brest","Denis","Michel","Denis@gmail.com",3);
+INSERT INTO tb_ass_club_utilisateur VALUES (7,3);
+INSERT INTO tb_login VALUES("Roger@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_utilisateur VALUES (8,"Jaures 29200 Brest","Roger","Coco","Roger@gmail.com",4);
+INSERT INTO tb_login VALUES("Claude@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (8,3);
+INSERT INTO tb_utilisateur VALUES (9,"Jaures 29200 Brest","Claude","Razga","Claude@gmail.com",5);
+INSERT INTO tb_login VALUES("Julio@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (9,3);
+INSERT INTO tb_utilisateur VALUES (10,"Jaures 29200 Brest","Julio","Cesar","Julio@gmail.com",6);
+INSERT INTO tb_login VALUES("Rimb@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (10,3);
+INSERT INTO tb_utilisateur VALUES (11,"Jaures 29200 Brest","Rimb","Ciboul","Rimb@gmail.com",7);
+INSERT INTO tb_login VALUES("Touchi@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (11,3);
+INSERT INTO tb_utilisateur VALUES (12,"Jaures 29200 Brest","Touchi","Miguel","Touchi@gmail.com",8);
+INSERT INTO tb_login VALUES("Mereles@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (12,3);
+INSERT INTO tb_utilisateur VALUES (13,"Jaures 29200 Brest","Mereles","Raul","Benoit@gmail.com",9);
+INSERT INTO tb_login VALUES("MBappe@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (13,3);
+INSERT INTO tb_utilisateur VALUES (14,"Jaures 29200 Brest","MBappe","Killian","MBappe@gmail.com",10);
+INSERT INTO tb_login VALUES("William@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (14,3);
+INSERT INTO tb_utilisateur VALUES (15,"Jaures 29200 Brest","William","Serin","William@gmail.com",11);
+INSERT INTO tb_login VALUES("Luigi@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (15,3);
+INSERT INTO tb_utilisateur VALUES (16,"Jaures 29200 Brest","Luigi","Paulo","Luigi@gmail.com",1);
+INSERT INTO tb_login VALUES("Younes@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (16,3);
+INSERT INTO tb_utilisateur VALUES (17,"Jaures 29200 Brest","Younes","Youssouf","Younes@gmail.com",2);
+INSERT INTO tb_login VALUES("Mario@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (17,3);
+INSERT INTO tb_utilisateur VALUES (18,"Jaures 29200 Brest","Mario","Sapin","Mario@gmail.com",3);
+INSERT INTO tb_login VALUES("Grizzly@gmail.com","2020-08-08","azerty");
+INSERT INTO tb_ass_club_utilisateur VALUES (18,3);
+INSERT INTO tb_utilisateur VALUES (19,"Jaures 29200 Brest","Grizzly","Ours","Grizzly@gmail.com",4);
+INSERT INTO tb_ass_club_utilisateur VALUES (19,3);
 
 -- Liaison entre le club et l'utilisateur (  id de l'utilisateur, id du club )
 
@@ -90,20 +149,6 @@ INSERT INTO tb_ass_equipe_utilisateur VALUES (2,"abr",1);
 INSERT INTO tb_ass_equipe_utilisateur VALUES (3,"abr",1);
 INSERT INTO tb_ass_equipe_utilisateur VALUES (4,"jou",2);
 INSERT INTO tb_ass_equipe_utilisateur VALUES (5,"jou",3);
-
--- Création d'une typePosition correspondant au poste du joueur
-
-INSERT INTO tb_position VALUES(1,"DCG");
-INSERT INTO tb_position VALUES(2,"DCD");
-INSERT INTO tb_position VALUES(3,"DD");
-INSERT INTO tb_position VALUES(4,"DG");
-INSERT INTO tb_position VALUES(5,"GD");
-INSERT INTO tb_position VALUES(6,"MDCG");
-INSERT INTO tb_position VALUES(7,"MDCD");
-INSERT INTO tb_position VALUES(8,"MOC");
-INSERT INTO tb_position VALUES(9,"ATD");
-INSERT INTO tb_position VALUES(10,"ATG");
-INSERT INTO tb_position VALUES(11,"AT");
 
 -- Cette typePosition on l'associe à un utilisateur
 UPDATE tb_utilisateur
