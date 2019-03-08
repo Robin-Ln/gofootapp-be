@@ -1,5 +1,6 @@
 package fr.m2till.gofootapp;
 
+import fr.m2till.gofootapp.dao.UtilisateurDao;
 import fr.m2till.gofootapp.entity.*;
 import fr.m2till.gofootapp.entity.type.TypeCategorie;
 import fr.m2till.gofootapp.repository.*;
@@ -36,6 +37,14 @@ public class GofootappApplicationTests {
 
 	@Autowired
 	TypeCategorieRepository typeCategorieRepository;
+
+	@Autowired
+	UtilisateurDao utilisateurDao;
+
+	@Test
+	public void getUtilisateurByDao() {
+		Utilisateur utilisateur = utilisateurDao.getUtilisateur("robin@louarn.fr");
+	}
 
 	@Test
 	public void contextLoads() {
