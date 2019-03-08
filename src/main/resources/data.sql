@@ -108,7 +108,7 @@ INSERT INTO tb_position VALUES(11,"AT");
 -- Cette typePosition on l'associe à un utilisateur
 UPDATE tb_utilisateur
 SET i_p_id=1
-WHERE i_u_id=4;
+WHERE i_u_id=5;
 
 -- tb_regroupement_evenement
 INSERT `tb_regroupement_evenement` (`i_re_id`) VALUES ('1');
